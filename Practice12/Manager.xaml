@@ -1,0 +1,26 @@
+﻿<Window x:Class="Practice12.Manager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practice12"
+        mc:Ignorable="d"
+        Title="Manager" Height="450" Width="800">
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="У вас есть права на изменение всех ячеек, а также добавление новых клиентов"
+                   VerticalAlignment="Top" Height="67" Width="256" Margin="526,22,0,0"  
+                    TextAlignment="Center"  FontSize="14" 
+                   />
+        <DataGrid x:Name="mngDataGrid" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="399" VerticalAlignment="Top" Width="502" Margin="10,10,0,0" Loaded="MngDataGrid_Loaded">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path = LastName }" Header="LastName"  Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path = FirstName }" Header="FirstName"  Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path = MiddleName }" Header="MiddleName"  Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path = NumberPhone }" Header="NumberPhone"  Width="*"/>
+                <DataGridTextColumn Binding="{Binding Path = Passport }" Header="Passport"  Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="Save" Content="Сохранить изменения" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Margin="526,94,0,0" Height="35" Click="Save_Click"/>
+        <Button x:Name="mngAdd" Content="Добавить клиента" HorizontalAlignment="Left" VerticalAlignment="Top" Width="256" Margin="526,134,0,0" Height="35" Click="MngAdd_Click"/>
+    </Grid>
+</Window>
